@@ -1,0 +1,138 @@
+
+import $ from "jquery";
+import 'jquery-color';
+class Aya {
+  constructor(){
+    this.ayaUrl = 'http://api.alquran.cloud/v1/ayah/';
+    this.maxAya = 6235;
+    this.ayaUrlSufix = '/ar.asad';
+    this.fetchedAya = '';
+    this.ayaResp = {};
+    this.shortAya = 20;
+    this.longAya = 500;
+    this.colors = [
+    '#16a085',
+    '#27ae60',
+    '#2c3e50',
+    '#f39c12',
+    '#e74c3c',
+    '#9b59b6',
+    '#FB6964',
+    '#342224',
+    '#472E32',
+    '#BDBB99',
+    '#77B1A9',
+    '#73A857'
+  ];
+  }
+
+
+  getRandomAyaNum(){
+    return Math.floor(Math.random() * this.maxAya);
+  }
+  getRandomAyaUrl(number = null){
+    let randomAya = number ? number : this.getRandomAyaNum();
+    console.log(`${this.ayaUrl}${randomAya}${this.ayaUrlSufix}`);
+    return `${this.ayaUrl}${randomAya}${this.ayaUrlSufix}`;
+  }
+
+  fetchAya(number = null) {
+  console.log(number);
+
+  const ayaThis = this;
+  return new Promise(function(res, rej) {
+  $.ajax({
+    headers: {
+      Accept: 'application/json'
+    },
+    url: ayaThis.getRandomAyaUrl(number),
+    success: function (ayaObj) {
+              console.log(ayaObj);
+
+      if(ayaObj.data.text.length < ayaThis.shortAya || ayaObj.data.text.length > ayaThis.longAya){
+        ayaThis.getAya();
+        rej(ayaObj);
+      }
+      ayaThis.ayaResp = ayaObj;
+      ayaThis.fetchedAya = {
+        ayaText: ayaObj.data.text,
+        suraName: ayaObj.data.surah.name,
+        ayaNum: ayaObj.data.surah.numberOfAyahs
+      }
+      res(ayaObj);
+
+    }
+  });
+  });
+}
+
+getAya(number = null) {
+  const ayaThis = this;
+  if(typeof number == 'object')
+    number = null;
+
+  this.fetchAya(number).then(function(resp){
+  const fetchedAya = ayaThis.fetchedAya;
+  console.log(fetchedAya);
+  let currentAya = fetchedAya.ayaText;
+  let currentSura= fetchedAya.suraName;
+
+  $('#tweet-quote').attr(
+    'href',
+    'https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=' +
+      encodeURIComponent('"' + currentAya + '" ' + currentSura)
+  );
+
+  $('#tumblr-quote').attr(
+    'href',
+    'https://www.tumblr.com/widgets/share/tool?posttype=quote&tags=quotes,freecodecamp&caption=' +
+      encodeURIComponent(currentSura) +
+      '&content=' +
+      encodeURIComponent(currentAya) +
+      '&canonicalUrl=https%3A%2F%2Fwww.tumblr.com%2Fbuttons&shareSource=tumblr_share_button'
+  );
+
+  $('.aya-text').animate({ opacity: 0 }, 500, function () {
+    $(this).animate({ opacity: 1 }, 500);
+    $('#text').text(currentAya);
+  });
+
+  $('.aya-sorah').animate({ opacity: 0 }, 500, function () {
+    $(this).animate({ opacity: 1 }, 500);
+    $('#surah').html(currentSura);
+    $('#aya-num').html(fetchedAya.ayaNum);
+  });
+
+  var color = Math.floor(Math.random() * ayaThis.colors.length);
+  var newcolor = ayaThis.colors[color];
+  $('html body').animate(
+    {
+      backgroundColor: newcolor,
+      color: newcolor
+    },
+    1000
+  );
+  $('.button').animate(
+    {
+      backgroundColor: newcolor
+    },
+    1000
+  );
+
+
+  }).catch(function(err){
+  });
+
+}
+}
+
+
+
+const projectName = 'random-aya-machine';
+
+
+
+
+
+
+export default Aya;
