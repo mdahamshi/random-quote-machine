@@ -30,7 +30,6 @@ function App() {
           <button className="button" id="new-quote">آية جديدة</button>
         </div>
       </div>
-      <div className="footer"><a href="https://codepen.io/hezag/">hezag</a> سورة</div>
     </div>
       </header>
     </div>
