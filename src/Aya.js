@@ -75,13 +75,13 @@ getAya(number = null) {
 
   $('#tweet-quote').attr(
     'href',
-    'https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=' +
+    'https://twitter.com/intent/tweet?hashtags=ayah&related=freecodecamp&text=' +
       encodeURIComponent('"' + currentAya + '" ' + currentSura)
   );
 
   $('#tumblr-quote').attr(
     'href',
-    'https://www.tumblr.com/widgets/share/tool?posttype=quote&tags=quotes,freecodecamp&caption=' +
+    'https://www.tumblr.com/widgets/share/tool?posttype=ayah&tags=quotes,freecodecamp&caption=' +
       encodeURIComponent(currentSura) +
       '&content=' +
       encodeURIComponent(currentAya) +
