@@ -27,7 +27,7 @@ class App extends  Component{
         <div className="aya-sorah"><span id="aya-num"></span> - <span id="surah"></span></div>
         <div className="buttons">
           <a
-            className="button"
+            className="button sb-share"
             id="tweet-ayah"
             title="Tweet this ayah!"
             target="_top"
@@ -35,7 +35,7 @@ class App extends  Component{
             <i className="fa fa-twitter"></i>
           </a>
           <a
-            className="button"
+            className="button sb-share"
             id="tumblr-ayah"
             title="Post this ayah on tumblr!"
             target="_blank"
@@ -44,13 +44,23 @@ class App extends  Component{
           </a>
 
            <a
-            className="button"
+            className="button sb-share"
             id="copy-clip"
             title="Copy to clipboard!"
             onClick={this.copyToCB}
 
           >
             <i className="fa fa-clipboard"></i>
+            </a>
+
+            <a
+            className="button sb-share"
+            id="whats-ayah"
+            title="share to whatsapp"
+            target="_blank"
+
+          >
+            <i className="fa fa-whatsapp"></i>
             </a>
           <button className="button" id="new-quote">آية جديدة</button>
         </div>

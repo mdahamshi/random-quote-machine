@@ -78,13 +78,20 @@ getAya(number = null) {
 
   $('#tweet-ayah').attr(
     'href',
-    'https://twitter.com/intent/tweet?hashtags=ayah&related=freecodecamp&text=' +
+    'https://twitter.com/intent/tweet?hashtags=ayah&text=' +
       encodeURIComponent('"' + currentAya + '" ' + currentSura)
   );
 
+    $('#whats-ayah').attr(
+    'href',
+    'whatsapp://send?text=' +
+      encodeURIComponent('"' + currentAya + '" ' + currentSura)
+  );
+
+
   $('#tumblr-ayah').attr(
     'href',
-    'https://www.tumblr.com/widgets/share/tool?posttype=ayah&tags=quotes,freecodecamp&caption=' +
+    'https://www.tumblr.com/widgets/share/tool?posttype=ayah&tags=quotes&caption=' +
       encodeURIComponent(currentSura) +
       '&content=' +
       encodeURIComponent(currentAya) +
