@@ -32,7 +32,7 @@ class Aya {
   }
   getRandomAyaUrl(number = null){
     let randomAya = number ? number : this.getRandomAyaNum();
-    return `${this.ayaUrl}${randomAya}`;
+    return `${this.ayaUrl}${randomAya}${this.ayaUrlSufix}`;
   }
 
   fetchAya(number = null) {
@@ -45,7 +45,7 @@ class Aya {
     },
     url: ayaThis.getRandomAyaUrl(number),
     success: function (ayaObj) {
-
+      // console.log(ayaObj);
       if(ayaObj.data.text.length < ayaThis.shortAya || ayaObj.data.text.length > ayaThis.longAya){
         ayaThis.getAya();
         rej(ayaObj);
@@ -54,7 +54,7 @@ class Aya {
       ayaThis.fetchedAya = {
         ayaText: ayaObj.data.text,
         suraName: ayaObj.data.surah.name,
-        ayaNum: ayaObj.data.surah.numberOfAyahs
+        ayaNum: ayaObj.data.numberInSurah
       }
       res(ayaObj);
 
