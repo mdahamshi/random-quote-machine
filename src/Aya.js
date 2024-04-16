@@ -32,7 +32,7 @@ class Aya {
   }
   getRandomAyaUrl(number = null){
     let randomAya = number ? number : this.getRandomAyaNum();
-    return `${this.ayaUrl}${randomAya}${this.ayaUrlSufix}`;
+    return `${this.ayaUrl}${randomAya}`;
   }
 
   fetchAya(number = null) {
