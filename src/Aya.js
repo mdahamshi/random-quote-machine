@@ -32,12 +32,10 @@ class Aya {
   }
   getRandomAyaUrl(number = null){
     let randomAya = number ? number : this.getRandomAyaNum();
-    console.log(`${this.ayaUrl}${randomAya}${this.ayaUrlSufix}`);
     return `${this.ayaUrl}${randomAya}${this.ayaUrlSufix}`;
   }
 
   fetchAya(number = null) {
-  console.log(number);
 
   const ayaThis = this;
   return new Promise(function(res, rej) {
@@ -47,7 +45,6 @@ class Aya {
     },
     url: ayaThis.getRandomAyaUrl(number),
     success: function (ayaObj) {
-              console.log(ayaObj);
 
       if(ayaObj.data.text.length < ayaThis.shortAya || ayaObj.data.text.length > ayaThis.longAya){
         ayaThis.getAya();
@@ -73,7 +70,6 @@ getAya(number = null) {
 
   this.fetchAya(number).then(function(resp){
   const fetchedAya = ayaThis.fetchedAya;
-  console.log(fetchedAya);
   let currentAya = fetchedAya.ayaText;
   let currentSura= fetchedAya.suraName;
 
