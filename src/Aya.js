@@ -31,7 +31,10 @@ class Aya {
     return Math.floor(Math.random() * this.maxAya);
   }
   getRandomAyaUrl(number = null){
-    let randomAya = number ? number : this.getRandomAyaNum();
+    let randomAya = number;
+    if(number < 1 || number > this.maxAya)
+      randomAya = this.getRandomAyaNum();
+
     return `${this.ayaUrl}${randomAya}${this.ayaUrlSufix}`;
   }
 
@@ -73,13 +76,13 @@ getAya(number = null) {
   let currentAya = fetchedAya.ayaText;
   let currentSura= fetchedAya.suraName;
 
-  $('#tweet-quote').attr(
+  $('#tweet-ayah').attr(
     'href',
     'https://twitter.com/intent/tweet?hashtags=ayah&related=freecodecamp&text=' +
       encodeURIComponent('"' + currentAya + '" ' + currentSura)
   );
 
-  $('#tumblr-quote').attr(
+  $('#tumblr-ayah').attr(
     'href',
     'https://www.tumblr.com/widgets/share/tool?posttype=ayah&tags=quotes,freecodecamp&caption=' +
       encodeURIComponent(currentSura) +

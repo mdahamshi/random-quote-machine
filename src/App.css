@@ -98,8 +98,9 @@ body {
 #quote-box .buttons .button:hover {
   opacity: 0.9;
 }
-#quote-box .buttons .button#tweet-quote,
-#quote-box .buttons .button#tumblr-quote {
+#quote-box .buttons .button#copy-clip,
+#quote-box .buttons .button#tweet-ayah,
+#quote-box .buttons .button#tumblr-ayah {
   float: left;
   padding: 0px;
   padding-top: 8px;
