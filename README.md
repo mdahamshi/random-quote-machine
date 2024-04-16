@@ -1,6 +1,7 @@
 # Random Ayah
 
 Simple App that display random Ayah from the Holy Quran.
+based on the freecodecap [random quote challenger](https://www.freecodecamp.org/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-random-quote-machine)
 
 # Live example:
 https://aya.dahamshi.xyz
