@@ -3,7 +3,7 @@ import $ from "jquery";
 import 'jquery-color';
 class Aya {
   constructor(){
-    this.ayaUrl = 'http://api.alquran.cloud/v1/ayah/';
+    this.ayaUrl = 'https://api.alquran.cloud/v1/ayah/';
     this.maxAya = 6235;
     this.ayaUrlSufix = '/ar.asad';
     this.fetchedAya = '';
