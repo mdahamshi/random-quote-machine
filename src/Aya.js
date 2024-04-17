@@ -90,7 +90,7 @@ getAya(number = null) {
 
   $('#fb-ayah').attr(
     'href',
-    'https://www.facebook.com/sharer/sharer.php=' + encodeURIComponent(window.location.href)
+    'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(window.location.href)
   );
 
   $('.aya-text').animate({ opacity: 0 }, 500, function () {
