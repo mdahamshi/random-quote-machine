@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import Aya from './Aya'
 import { sendToVercelAnalytics } from './vitals';
 import jQuery from "jquery";
-const aya = new Aya;
+const aya = new Aya();
 document.aya = aya;
 console.log(Aya);
 ReactDOM.render(

@@ -31,36 +31,39 @@ class App extends  Component{
             id="tweet-ayah"
             title="Tweet this ayah!"
             target="_top"
+            href="#"
           >
             <i className="fa fa-twitter"></i>
           </a>
           <a
             className="button sb-share"
-            id="tumblr-ayah"
-            title="Post this ayah on tumblr!"
+            id="fb-ayah"
+            title="Post this ayah on facebook!"
             target="_blank"
+            href="#"
           >
-            <i className="fa fa-tumblr"></i>
+            <i className="fa fa-facebook"></i>
           </a>
-
-           <a
-            className="button sb-share"
-            id="copy-clip"
-            title="Copy to clipboard!"
-            onClick={this.copyToCB}
-
-          >
-            <i className="fa fa-clipboard"></i>
-            </a>
 
             <a
             className="button sb-share"
             id="whats-ayah"
             title="share to whatsapp"
             target="_blank"
+            href="#"
+
+            >
+            <i className="fa fa-whatsapp"></i>
+            </a>
+            <a
+            className="button sb-share"
+            id="copy-clip"
+            title="Copy to clipboard!"
+            onClick={this.copyToCB}
+            href="#"
 
           >
-            <i className="fa fa-whatsapp"></i>
+            <i className="fa fa-clipboard"></i>
             </a>
           <button className="button" id="new-quote">آية جديدة</button>
         </div>

@@ -88,14 +88,9 @@ getAya(number = null) {
       encodeURIComponent('"' + currentAya + '" ' + currentSura)
   );
 
-
-  $('#tumblr-ayah').attr(
+  $('#fb-ayah').attr(
     'href',
-    'https://www.tumblr.com/widgets/share/tool?posttype=ayah&tags=quotes&caption=' +
-      encodeURIComponent(currentSura) +
-      '&content=' +
-      encodeURIComponent(currentAya) +
-      '&canonicalUrl=https%3A%2F%2Fwww.tumblr.com%2Fbuttons&shareSource=tumblr_share_button'
+    'https://www.facebook.com/share.php=' + encodeURIComponent(window.location.href)
   );
 
   $('.aya-text').animate({ opacity: 0 }, 500, function () {
