@@ -5,7 +5,7 @@ class Aya {
   constructor(){
     this.ayaUrl = 'https://api.alquran.cloud/v1/ayah/';
     this.maxAya = 6235;
-    this.ayaUrlSufix = '/ar.asad';
+    this.ayaUrlSufix = '/quran-uthmani-min';
     this.fetchedAya = '';
     this.ayaResp = {};
     this.shortAya = 20;
