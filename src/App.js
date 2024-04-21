@@ -12,7 +12,7 @@ class App extends  Component{
     navigator.clipboard.writeText(copyText.textContent);
 
     // Alert the copied text
-    alert("Copied the text: " + copyText.textContent);
+    alert("Ayah copied successfully!");
   }
   render(){
   return (
