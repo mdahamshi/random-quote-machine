@@ -12,7 +12,7 @@ class App extends  Component{
     navigator.clipboard.writeText(copyText.textContent);
 
     // Alert the copied text
-    alert("Ayah copied successfully!");
+    alert("تم نسخ الآية بنجاح !");
   }
   render(){
   return (
