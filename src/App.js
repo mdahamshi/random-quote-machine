@@ -48,7 +48,7 @@ class App extends  Component{
             <a
             className="button sb-share"
             id="whats-ayah"
-            title="share to whatsapp"
+            title="Share to whatsapp"
             target="_blank"
             href="#"
 

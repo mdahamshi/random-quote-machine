@@ -17,8 +17,9 @@ ReactDOM.render(
 );
 jQuery(document).ready(function ($) {
 
-    aya.getAya();
+  aya.getAya();
 
+  document.querySelector('#sb-footer-year').innerHTML = (new Date()).getFullYear();
 
   $('#new-quote').on('click', aya.getAya.bind(aya));
 });
