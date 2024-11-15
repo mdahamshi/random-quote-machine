@@ -86,7 +86,7 @@ getAya(number = null) {
     $('#whats-ayah').attr(
     'href',
     'whatsapp://send?text=' +
-      encodeURIComponent('"' + currentAya + '" ' + currentSura  + ' ' )
+      encodeURIComponent('"' + currentAya + '" ' + currentSura  + ' ' + window.location.href)
   );
 
   $('#fb-ayah').attr(
