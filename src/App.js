@@ -9,7 +9,7 @@ class App extends  Component{
 
 
     // Copy the text inside the text field
-    navigator.clipboard.writeText(copyText.textContent);
+    navigator.clipboard.writeText(copyText.textContent + ' ' + window.location.href);
 
     // Alert the copied text
     alert("تم نسخ الآية بنجاح !");
