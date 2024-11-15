@@ -80,7 +80,7 @@ getAya(number = null) {
   $('#tweet-ayah').attr(
     'href',
     'https://twitter.com/intent/tweet?hashtags=ayah&text=' +
-      encodeURIComponent('"' + currentAya + '" ' + currentSura)
+      encodeURIComponent('"' + currentAya + '" ' + currentSura + '\n' + ayaThis.siteUrl)
   );
 
     $('#whats-ayah').attr(
