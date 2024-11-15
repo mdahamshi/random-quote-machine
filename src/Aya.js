@@ -10,7 +10,7 @@ class Aya {
     this.ayaResp = {};
     this.shortAya = 20;
     this.longAya = 500;
-    this.siteUrl = 'https://aya.dahamshi.xyz/';
+    this.siteUrl = 'aya.dahamshi.xyz';
     this.colors = [
     '#16a085',
     '#27ae60',
