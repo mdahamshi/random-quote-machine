@@ -10,7 +10,7 @@ class Aya {
     this.ayaResp = {};
     this.shortAya = 20;
     this.longAya = 500;
-    this.siteUrl = 'aya.dahamshi.xyz';
+    this.siteUrl = window.location.href;
     this.colors = [
     '#16a085',
     '#27ae60',
@@ -86,7 +86,7 @@ getAya(number = null) {
     $('#whats-ayah').attr(
     'href',
     'whatsapp://send?text=' +
-      encodeURIComponent('"' + currentAya + '" ' + currentSura  + ' ' + window.location.href)
+      encodeURIComponent('"' + currentAya + '" ' + currentSura  + ' ' + this.siteUrl)
   );
 
   $('#fb-ayah').attr(
