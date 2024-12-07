@@ -31,6 +31,25 @@ class Aya {
   getRandomAyaNum(){
     return Math.floor(Math.random() * this.maxAya);
   }
+  colorize(){
+    const ayaThis = this;
+    var color = Math.floor(Math.random() * ayaThis.colors.length);
+    var newcolor = ayaThis.colors[color];
+    $('html body').animate(
+      {
+        backgroundColor: newcolor,
+        color: newcolor
+      },
+      1000
+    );
+    $('.button').animate(
+      {
+        backgroundColor: newcolor
+      },
+      1000
+    );
+
+  }
   getRandomAyaUrl(number = null){
     let randomAya = number;
     if(number < 1 || number > this.maxAya)
@@ -105,22 +124,7 @@ getAya(number = null) {
     $('#aya-num').html(fetchedAya.ayaNum);
   });
 
-  var color = Math.floor(Math.random() * ayaThis.colors.length);
-  var newcolor = ayaThis.colors[color];
-  $('html body').animate(
-    {
-      backgroundColor: newcolor,
-      color: newcolor
-    },
-    1000
-  );
-  $('.button').animate(
-    {
-      backgroundColor: newcolor
-    },
-    1000
-  );
-
+  colorize();
 
   }).catch(function(err){
   });
