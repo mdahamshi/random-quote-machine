@@ -22,6 +22,7 @@ jQuery(document).ready(function ($) {
   document.querySelector('#sb-footer-year').innerHTML = (new Date()).getFullYear();
 
   $('#new-quote').on('click', aya.getAya.bind(aya));
+  $('#chage-color').on('click', aya.colorize.bind(aya));
 });
 
 reportWebVitals(sendToVercelAnalytics);

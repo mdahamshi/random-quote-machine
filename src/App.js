@@ -26,44 +26,43 @@ class App extends  Component{
         </div>
         <div className="aya-sorah"><span id="aya-num"></span> - <span id="surah"></span></div>
         <div className="buttons">
-          <a
-            className="button sb-share"
-            id="tweet-ayah"
-            title="Tweet this ayah!"
-            target="_top"
-            href="#"
-          >
-            <i className="fa fa-twitter"></i>
-          </a>
+
           <a
             className="button sb-share"
             id="fb-ayah"
             title="Post this ayah on facebook!"
             target="_blank"
             href="#"
-          >
+            >
             <i className="fa fa-facebook"></i>
           </a>
 
             <a
-            className="button sb-share"
-            id="whats-ayah"
-            title="Share to whatsapp"
-            target="_blank"
-            href="#"
-
-            >
-            <i className="fa fa-whatsapp"></i>
+              className="button sb-share"
+              id="whats-ayah"
+              title="Share to whatsapp"
+              target="_blank"
+              href="#"
+              >
+              <i className="fa fa-whatsapp"></i>
+            </a>
+              
+            <a
+              className="button sb-share"
+              id="copy-clip"
+              title="Copy to clipboard!"
+              onClick={this.copyToCB}
+              href="#"
+              >
+              <i className="fa fa-clipboard"></i>
             </a>
             <a
-            className="button sb-share"
-            id="copy-clip"
-            title="Copy to clipboard!"
-            onClick={this.copyToCB}
-            href="#"
-
-          >
-            <i className="fa fa-clipboard"></i>
+              className="button sb-share"
+              id="chage-color"
+              title="Change background color!"
+              href="#"
+              >
+              <i className="fa fa-pencil"></i>
             </a>
           <button className="button" id="new-quote">آية جديدة</button>
         </div>
