@@ -124,7 +124,7 @@ getAya(number = null) {
     $('#aya-num').html(fetchedAya.ayaNum);
   });
 
-  colorize();
+  ayaThis.colorize();
 
   }).catch(function(err){
   });
